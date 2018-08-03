@@ -29,148 +29,31 @@
 	</div>
 	<div class="list-product">
 		<div class="conte-prod">
-			
-			<!-- start product 01 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/camiza_01.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 28.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-			
-			<!-- start product 02 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/camiza_02.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 55.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
+			<?php 
+				require "asset/app/Producto.php";
+				$Producto = new Producto();
+				$datos_Producto = $Producto->Listar();
 
-			<!-- start product 03 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/celular_01.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 25.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
+				foreach ($datos_Producto as $key => $value) {
+					?>
+						<div class="box-prod">
+							<div class="img-prod">
+								<a href="payment.php?id=<?=$value->id?>">
+									<img src="asset/img/<?=$value->imagen?>" alt="">
+								</a>
+							</div>
+							<div class="detalle-prod">
+								<span class="name-prod"><?=$value->nombre?></span>
+								<span class="precio"><?=$value->precio?></span>
+							</div>
+							<div class="box-buy">
+								<a href="payment.php?id=<?=$value->id?>">buy now</a>
+							</div>
+						</div>
 
-			<!-- start product 04 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/celular_02.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 45.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 05 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/polo_01.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 35.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 06 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/polo_02.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 50.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 07 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/tasa_01.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 40.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 08 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/tasa_02.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 30.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 09 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/zapatilla_01.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 25.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-			<!-- start product 10 -->
-			<div class="box-prod">
-				<div class="img-prod">
-					<img src="asset/img/zapatilla_02.jpg" alt="">
-				</div>
-				<div class="detalle-prod">
-					<span class="name-prod">Nombre producto</span>
-					<span class="precio">$ 20.00</span>
-				</div>
-				<div class="box-buy">
-					<a href="">buy now</a>
-				</div>
-			</div>
-
-
+					<?php 
+				}
+			?>
 
 		</div>
 

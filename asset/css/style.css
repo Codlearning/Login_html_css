@@ -57,7 +57,7 @@ header ul.menu li.active {
     overflow: hidden;
 }
 .brand {
-    width: 18%;
+    width: 15%;
     height: calc(100vh - 4rem);
     float: left;
     left: 0;
